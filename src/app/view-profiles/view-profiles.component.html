@@ -53,13 +53,18 @@
                                 </table>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btm-md btn-success" data-dismiss="modal" (click)="getCurrentProfileShortlisted(profile.ProfileId)"> ShortList <i class="far fa-check-circle"></i></button>
+                                <button type="button" 
+                                        class="btn btm-md" 
+                                        data-dismiss="modal" 
+                                        (click)="getCurrentProfileShortlisted(profile.ProfileId,profile.AttachedFor)" 
+                                        [ngClass]="(profile.Shortlisted === 'Yes')?'btn-danger':'btn-success'">
+                                    {{ (profile.Shortlisted === 'Yes') ? ' DeList ' : 'ShortList' }}
+                                    </button>
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </tr>
         </tbody>
     </table>

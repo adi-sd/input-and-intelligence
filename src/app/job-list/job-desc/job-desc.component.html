@@ -1,46 +1,48 @@
-<div class="card mx-auto" *ngIf="requestedJobDesc">
-    <div class="card-header">
-        {{ requestedJobDesc.jobName }} <span>( {{ requestedJobDesc.juid }} )</span>
-        <a [routerLink]="['/viewProfiles',requestedJobDesc.juid]" routerLinkActive="active">
-            <button class="form-group btn btn-success">
-                View Profile
-            </button>
-        </a>
+<div class="container-fluid">
+    <div class="card mx-auto" *ngIf="requestedJobDesc">
+        <div class="card-header">
+            {{ requestedJobDesc.jobName }} <span>( {{ requestedJobDesc.juid }} )</span>
+            <a [routerLink]="['/viewProfiles',requestedJobDesc.juid]" routerLinkActive="active">
+                <button class="form-group btn btn-success">
+                    View Profiles
+                </button>
+            </a>
+        </div>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td class="td-head"><label for="jobDecsiption">Job Description </label></td>
+                    <td>:</td>
+                    <td> {{ requestedJobDesc.jobDescription }}</td>
+                </tr>
+                <tr>
+                    <td class="td-head"><label for="jobDecsiption">Minimun Experience </label></td>
+                    <td>:</td>
+                    <td> {{ requestedJobDesc.reqExperience }}</td>
+                </tr>
+                <tr>
+                    <td class="td-head"><label for="jobDecsiption">Required Skills </label></td>
+                    <td>:</td>
+                    <td> {{ requestedJobDesc.reqSkills }} </td>
+                </tr>
+                <tr>
+                    <td class="td-head"><label for="jobDecsiption">Expected Joining </label></td>
+                    <td>:</td>
+                    <td> {{ requestedJobDesc.expectedJoining }} </td>
+                </tr>
+                <tr>
+                    <td><label for="resumesUpload">Upload Resumes </label></td>
+                    <td>:</td>
+                    <td>
+                        <form [formGroup]="uploadResumes" (ngSubmit)="uploadFileToActivity()">
+                            <input type="file" name="file" id="file" (change)="handleFileInput($event.target.files)" />
+                            <button class="form-group btn btn-primary" [disabled]="uploadResumes.valid">
+                                Process Resumes
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <table class="table">
-        <tbody>
-            <tr>
-                <td class="td-head"><label for="jobDecsiption">Job Description </label></td>
-                <td>:</td>
-                <td> {{ requestedJobDesc.jobDescription }}</td>
-            </tr>
-            <tr>
-                <td class="td-head"><label for="jobDecsiption">Minimun Experience </label></td>
-                <td>:</td>
-                <td> {{ requestedJobDesc.reqExperience }}</td>
-            </tr>
-            <tr>
-                <td class="td-head"><label for="jobDecsiption">Required Skills </label></td>
-                <td>:</td>
-                <td> {{ requestedJobDesc.reqSkills }} </td>
-            </tr>
-            <tr>
-                <td class="td-head"><label for="jobDecsiption">Expected Joining </label></td>
-                <td>:</td>
-                <td> {{ requestedJobDesc.expectedJoining }} </td>
-            </tr>
-            <tr>
-                <td><label for="resumesUpload">Upload Resumes </label></td>
-                <td>:</td>
-                <td>
-                    <form [formGroup]="uploadResumes" (ngSubmit)="uploadFileToActivity()">
-                        <input type="file" name="file" id="file" (change)="handleFileInput($event.target.files)"/>
-                        <button class="form-group btn btn-primary" [disabled]="uploadResumes.valid">
-                            Process Resumes
-                        </button>
-                    </form>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </div>

@@ -46,4 +46,9 @@ export class ApiCallService {
     return this.httpClient.get<any>(`${this.apiURL}/getResumeDetailByAttachedJuid/${juid}`, this.httpOptions);
   }
 
+  public getCurrentProfileShortlisted(profileId: string): Observable<any> {
+    console.log('In api-call.service : getCurrentProfileShortlisted ');
+    return this.httpClient.get<any>(`${this.apiURL}/shortlistProfile/${profileId}`, this.httpOptions);
+  }
+
 }

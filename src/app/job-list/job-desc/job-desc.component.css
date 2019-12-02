@@ -5,6 +5,13 @@
     margin: 0 auto;
     float: none;
     margin-bottom: 10px;
+    border-collapse: collapse !important;
+    border: 2px solid;
+}
+
+.container-fluid {
+    margin-top: 20px;
+    width: 75%;
 }
 
 .card-header {
