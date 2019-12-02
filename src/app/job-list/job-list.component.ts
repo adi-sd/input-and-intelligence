@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { jobDesc } from '../models/jobDesc.model';
-
+import { ApiCallService } from '../services/api-call.service';
 
 @Component({
   selector: 'app-job-list',
@@ -10,21 +10,22 @@ import { jobDesc } from '../models/jobDesc.model';
 })
 export class JobListComponent implements OnInit {
 
-  jobList = [
-    {
-      jobName : "Job1"
-    },
-    {
-      jobName : "Job2"
-    },
-    {
-      jobName : "Job3"
-    }
-  ]
+  public jobList: jobDesc[];
 
-  constructor() { }
+  constructor(private apiCallService: ApiCallService) { }
 
   ngOnInit() {
+    this.apiCallService.getJobDescriptionIds().subscribe(
+      (val) => {
+        console.log('GET call successful value returned in body', val);
+        this.jobList = val.result;
+      },
+      (res) => {
+        console.log('GET call in error', res);
+      },
+      () => {
+        console.log('The GET observable is now completed.');
+      });
   }
 
 }

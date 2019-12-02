@@ -1,13 +1,18 @@
+// tslint:disable-next-line:class-name
 export class jobDesc {
-    //job specific
-    juid : string;
-    
-    //job details
-    jobName : string;
-    jobDescription : string;
-    reqExperience : string;
-    reqSkills : string[];
+    juid: string;
+    jobName: string;
+    jobDescription: string;
+    reqExperience: string;
+    reqSkills: string;
+    expectedJoining: string;
 
-    //job specific 
-    appliedFor : string;
+    constructor(juid: string, jobName: string, jobDescription: string, reqExperience: string, reqSkills: string, expectedJoining: string) {
+        this.juid = 'JD_' + juid;
+        this.jobName = jobName;
+        this.jobDescription = jobDescription;
+        this.reqExperience = reqExperience;
+        this.reqSkills = reqSkills;
+        this.expectedJoining = expectedJoining;
+    }
 }

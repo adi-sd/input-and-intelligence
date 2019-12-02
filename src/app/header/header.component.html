@@ -1,38 +1,20 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" [routerLink]="['home']">Input&Intelligence</a>
 
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="#" width="30" height="30" alt="#">
-        </a>
-    </nav>
-
-    <a class="navbar-brand" href="#">Input&Intelligence</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-
-            <li class="nav-item">
-                <a class="nav-link" href="/home">Home<span class="sr-only">(current)</span></a>
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                <a class="nav-link" routerLink="/openPositions" routerLinkActive="active">Open Positions</a>
             </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="/openPositions">Open Positions<span class="sr-only">(current)</span></a>
-            </li>
-
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
+            <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                <a class="nav-link" routerLink="/addJobs" routerLinkActive="active">Add jobs</a>
             </li>
         </ul>
     </div>

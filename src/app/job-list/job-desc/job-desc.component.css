@@ -1,0 +1,34 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+.card {
+    height: fit-content;
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+}
+
+.card-header {
+    font-family: 'Poppins', sans-serif;
+    font: 600;
+    font-size: 1.5rem;
+}
+
+.card-header span {
+    font-size: 0.8rem;
+}
+
+.td-head {
+    width: 17%;
+}
+
+input {
+    width: 50%;
+}
+
+.btn {
+    display: inline-block;
+    position: absolute;
+    right: 30px;
+    height: 50x;
+    width: 250px;
+}
