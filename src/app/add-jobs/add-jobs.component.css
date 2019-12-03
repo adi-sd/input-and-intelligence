@@ -1,6 +1,19 @@
 .container-fluid {
-    height: fit-content;
-    margin: 0 auto;
-    float: none;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    width: 75%;
+    border-collapse: collapse !important;
+    border: 2px solid;
+}
+
+card {
+    
+}
+
+form {
+    margin: 20px;
+}
+
+button {
+    left: 10%;
+    width: 150px;
 }

@@ -1,0 +1,35 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+.container-fluid {
+    margin-top: 15%;
+    width: 75%;
+    border-collapse: collapse !important;
+    /* border: 2px solid; */
+    font-family: 'Poppins', sans-serif;
+    color: whitesmoke;
+}
+
+h1 {
+    font-size: 500%;
+    font: 500;
+}
+
+h3 {
+    font-size: 300%
+}
+
+#bg {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+	
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -2;
+}
+
+.text {
+    margin-left: 15%;
+    margin-bottom: 10%;
+}

@@ -63,8 +63,7 @@ export class JobDescComponent implements OnInit {
   }
 
   uploadFileToActivity() {
-    if( this.filesToUpload != null && this.filesToUpload != undefined )
-    {
+    if ( this.filesToUpload != null && this.filesToUpload !== undefined ) {
       this.apiCallService.postFile(this.filesToUpload, this.requestedJobId).subscribe(
         (val) => {
           console.log('POST File call successful value returned in body', val);
@@ -76,12 +75,9 @@ export class JobDescComponent implements OnInit {
         () => {
           console.log('The POST observable is now completed.');
         });
+    } else {
+        console.log('Failed to capture File')
     }
-    else
-    {
-        console.log("Failed to capture File")
-    }
-    
   }
 
 }

@@ -31,11 +31,16 @@
                     <td> {{ requestedJobDesc.expectedJoining }} </td>
                 </tr>
                 <tr>
+                    <td class="td-head"><label for="jobDecsiption">Vacancies </label></td>
+                    <td>:</td>
+                    <td> {{ requestedJobDesc.Vacancies }} </td>
+                </tr>
+                <tr>
                     <td><label for="resumesUpload">Upload Resumes </label></td>
                     <td>:</td>
                     <td>
                         <form [formGroup]="uploadResumes" (ngSubmit)="uploadFileToActivity()">
-                            <input type="file" name="file" id="file" (change)="handleFileInput($event.target.files)" />
+                            <input type="file" name="file" id="file" (change)="handleFileInput($event.target.files)"/>
                             <button class="form-group btn btn-primary" [disabled]="uploadResumes.valid">
                                 Process Resumes
                             </button>

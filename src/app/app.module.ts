@@ -25,7 +25,7 @@ import { ViewProfilesComponent } from './view-profiles/view-profiles.component';
     HomeComponent,
     ApplicationFormComponent,
     AddJobsComponent,
-    ViewProfilesComponent
+    ViewProfilesComponent,
   ],
   imports: [
     BrowserModule,

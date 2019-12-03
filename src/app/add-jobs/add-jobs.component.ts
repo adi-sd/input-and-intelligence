@@ -22,6 +22,7 @@ export class AddJobsComponent implements OnInit {
       reqExperience: [null, Validators.required],
       expectedJoining: [null, Validators.required],
       reqSkills: [null, Validators.required],
+      vacancies: [null, Validators.required]
     });
   }
 
@@ -35,14 +36,16 @@ export class AddJobsComponent implements OnInit {
       formDetail.value.jobName,
       formDetail.value.jobDescription,
       formDetail.value.reqExperience,
-      formDetail.value.expectedJoining,
       formDetail.value.reqSkills,
+      formDetail.value.vacancies,
+      formDetail.value.expectedJoining
     );
 
     this.apiCallService.uploadJobDescription(addedJob).subscribe(
       (val) => {
         console.log('POST call successful value returned in body',
           val);
+        location.reload();
       },
       (res) => {
         console.log('POST call in error', res);

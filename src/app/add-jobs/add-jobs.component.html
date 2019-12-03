@@ -1,38 +1,42 @@
-<div class="card mx-auto">
-    <div class="col-lg-11">
-        <form [formGroup]="addJob" (ngSubmit)="createJobObject(addJob)">
-            <div class="form-group row">
-                <label for="jobName" class="col-sm-2 col-form-label">Profile:
-                </label>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" formControlName="jobName" />
-                </div>
+<div class="container-fluid">
+    <form [formGroup]="addJob" (ngSubmit)="createJobObject(addJob)">
+        <div class="form-group row">
+            <label for="jobName" class="col-sm-3 col-form-label">Profile:
+            </label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" formControlName="jobName" />
             </div>
-            <div class="form-group row">
-                <label for="jobDescription" class="col-sm-2 col-form-label">Job Description :</label>
-                <div class="col-sm-8">
-                    <textarea type="text" rows="3" class="form-control" formControlName="jobDescription"></textarea>
-                </div>
+        </div>
+        <div class="form-group row">
+            <label for="jobDescription" class="col-sm-3 col-form-label">Job Description :</label>
+            <div class="col-sm-9">
+                <textarea type="text" rows="3" class="form-control" formControlName="jobDescription"></textarea>
             </div>
-            <div class="form-group row">
-                <label for="reqExperience" class="col-sm-2 col-form-label">Required Experience :</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control" formControlName="reqExperience" />
-                </div>
+        </div>
+        <div class="form-group row">
+            <label for="reqExperience" class="col-sm-3 col-form-label">Required Experience :</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" formControlName="reqExperience" />
             </div>
-            <div class="form-group row">
-                <label for="expectedJoining" class="col-sm-2 col-form-label">Expected Joining :</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control" formControlName="expectedJoining" />
-                </div>
+        </div>
+        <div class="form-group row">
+            <label for="expectedJoining" class="col-sm-3 col-form-label">Expected Joining :</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" formControlName="expectedJoining" />
             </div>
-            <div class="form-group row">
-                <label for="reqSkills" class="col-sm-2 col-form-label">Skillset :</label>
-                <div class="col-sm-8">
-                    <textarea class="form-control" rows="3" formControlName="reqSkills"></textarea>
-                </div>
+        </div>
+        <div class="form-group row">
+            <label for="vacancies" class="col-sm-3 col-form-label">Vacancies :</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" formControlName="vacancies" />
             </div>
-            <button class="form-group col-sm-2 btn btn-primary" [disabled]="!addJob.valid">Submit</button>
-        </form>
-    </div>
+        </div>
+        <div class="form-group row">
+            <label for="reqSkills" class="col-sm-3 col-form-label">Skillset :</label>
+            <div class="col-sm-9">
+                <textarea class="form-control" rows="3" formControlName="reqSkills"></textarea>
+            </div>
+        </div>
+        <button class="form-group btn btn-primary" [disabled]="!addJob.valid">Submit</button>
+    </form>
 </div>
